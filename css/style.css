@@ -1,0 +1,225 @@
+/* -------------------------------------------------------------------------- */
+/*                                 GOOGLE FONT                                */
+/* -------------------------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap");
+
+/* -------------------------------------------------------------------------- */
+/*                                  VARIABLES                                 */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  --clr-primary: rgb(255, 107, 129);
+  --clr-ntrl-max: #000;
+  --clr-ntrl-min: #fff;
+  --clr-ntrl-min-alt: rgb(249, 249, 249);
+  --clr-base: rgb(8, 24, 40);
+  --clr-base-alt: rgb(34, 34, 34);
+  --ff-base: "Inter", sans-serif;
+  --main-transition: all 0.3s ease;
+  --main-shadow: 0 5px 5px 10px rgba(0, 0, 0, 0.06);
+  --fs-base: 1.6rem;
+  --fs-h1: 4rem;
+  --fs-h2: 3rem;
+  --fs-h3: 1.8rem;
+  --fs-h4: 1.4rem;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 500;
+  --fw-bolder: 700;
+  --fw-boldest: 800;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              CSS GLOBAL RULES                              */
+/* -------------------------------------------------------------------------- */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-family: var(--ff-base);
+  color: var(--clr-base);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-base);
+  font-size: var(--ff-base);
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+/* -------------------------------------------------------------------------- */
+/*                               HELPER CLASSES                               */
+/* -------------------------------------------------------------------------- */
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 15px;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+}
+
+.h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-boldest);
+}
+
+.h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bolder);
+}
+.h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bolder);
+}
+.h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-regular);
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 1.2rem 3rem;
+  text-transform: capitalize;
+  font-weight: var(--fw-bold);
+}
+.btn-primary {
+  border-color: var(--clr-ntrl-min);
+  color: var(--clr-ntrl-min);
+}
+.btn-secondary {
+  background-color: var(--clr-ntrl-min);
+  color: var(--clr-primary);
+}
+
+.jc-start {
+  justify-content: start;
+}
+/* -------------------------------------------------------------------------- */
+/*                             START HEADER STYLES                            */
+/* -------------------------------------------------------------------------- */
+.header {
+  height: 100px;
+  background: var(--clr-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.header-logo {
+  width: 150px;
+}
+
+.toggler-menu {
+  width: 40px;
+  height: auto;
+  background-color: #fff;
+}
+.toggler-menu .bar {
+  display: block;
+  height: 5px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  display: none;
+}
+.toggler-menu .bar-3 {
+  margin-bottom: 0;
+}
+
+.main-nav {
+  flex: 0 0 50%;
+}
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  padding: 1.5px 2.5px;
+  text-transform: capitalize;
+  font-weight: var(--fw-bold);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              END HEADER STYLES                             */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                              START HOME STYLES                             */
+/* -------------------------------------------------------------------------- */
+.home {
+  background-color: var(--clr-primary);
+  padding: 120px 0;
+  height: 100%;
+}
+
+.home-data {
+  align-self: center;
+}
