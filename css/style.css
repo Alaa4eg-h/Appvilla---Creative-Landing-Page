@@ -119,6 +119,7 @@ img {
 .h1 {
   font-size: var(--fs-h1);
   font-weight: var(--fw-boldest);
+  color: var(--clr-ntrl-min);
 }
 
 .h2 {
@@ -146,14 +147,26 @@ img {
   padding: 1.2rem 3rem;
   text-transform: capitalize;
   font-weight: var(--fw-bold);
+  transition: var(--main-transition);
 }
 .btn-primary {
   border-color: var(--clr-ntrl-min);
   color: var(--clr-ntrl-min);
 }
+
+.btn-primary:hover {
+  color: var(--clr-primary);
+  background-color: var(--clr-ntrl-min);
+}
+
 .btn-secondary {
   background-color: var(--clr-ntrl-min);
   color: var(--clr-primary);
+}
+
+.btn-secondary:hover {
+  color: var(--clr-ntrl-min);
+  background-color: var(--clr-ntrl-max);
 }
 
 .jc-start {
@@ -164,7 +177,6 @@ img {
 /* -------------------------------------------------------------------------- */
 .header {
   height: 100px;
-  background: var(--clr-primary);
   position: fixed;
   top: 0;
   left: 0;
@@ -205,6 +217,7 @@ img {
   padding: 1.5px 2.5px;
   text-transform: capitalize;
   font-weight: var(--fw-bold);
+  color: var(--clr-ntrl-min);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -216,10 +229,25 @@ img {
 /* -------------------------------------------------------------------------- */
 .home {
   background-color: var(--clr-primary);
-  padding: 120px 0;
+  padding: 150px 0;
   height: 100%;
 }
 
 .home-data {
   align-self: center;
+  padding: 5rem 0;
+  flex: 0 0 40%;
+}
+
+.home-data h1 {
+  margin-bottom: 3rem;
+}
+
+.home-data p {
+  color: var(--clr-ntrl-min);
+  margin-bottom: 2rem;
+}
+
+.home-data .cta-btn .btn:first-child {
+  margin-right: 2rem;
 }
