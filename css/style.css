@@ -2,7 +2,7 @@
 /*                                 GOOGLE FONT                                */
 /* -------------------------------------------------------------------------- */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 /* -------------------------------------------------------------------------- */
 /*                                  VARIABLES                                 */
@@ -13,21 +13,24 @@
   --clr-ntrl-max: #000;
   --clr-ntrl-min: #fff;
   --clr-ntrl-min-alt: rgb(249, 249, 249);
-  --clr-base: rgb(8, 24, 40);
-  --clr-base-alt: rgb(34, 34, 34);
+  --clr-base: rgb(136, 136, 136);
+  --clr-base-alt: rgb(8, 24, 40);
   --ff-base: "Inter", sans-serif;
   --main-transition: all 0.3s ease;
-  --main-shadow: 0 5px 5px 10px rgba(0, 0, 0, 0.06);
+  --main-shadow: 0 4px 6px rgb(0, 0, 0, 0.16);
   --fs-base: 1.6rem;
   --fs-h1: 4rem;
-  --fs-h2: 3rem;
-  --fs-h3: 1.8rem;
+  --fs-h2: 3.4rem;
+  --fs-h3: 1.5rem;
   --fs-h4: 1.4rem;
   --fw-light: 300;
   --fw-regular: 400;
   --fw-bold: 500;
+  --fw-bold-alt: 600;
   --fw-bolder: 700;
   --fw-boldest: 800;
+  --bd-radius-sm: 5px;
+  --bd-radius-lg: 10px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -46,8 +49,8 @@ html {
 }
 
 body {
-  font-weight: normal;
-  font-size: 1.6rem;
+  font-weight: var(--fw-regular);
+  font-size: 1.5rem;
   line-height: 1.2;
   font-family: var(--ff-base);
   color: var(--clr-base);
@@ -70,6 +73,15 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: var(--clr-base-alt);
+}
+p {
+  line-height: 1.6;
 }
 /* -------------------------------------------------------------------------- */
 /*                               HELPER CLASSES                               */
@@ -116,6 +128,47 @@ img {
   }
 }
 
+/* GENERAL */
+.section {
+  padding: 120px 0;
+}
+
+.section-drk {
+  background-color: #f9f9f9;
+}
+.section-heading {
+  text-align: center;
+  width: 55%;
+  margin: 0 auto 40px auto;
+}
+
+.section-heading h3 {
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  margin-bottom: 2rem;
+}
+.section-heading h2 {
+  margin-bottom: 2rem;
+}
+.section-heading p {
+  padding: 0 2rem;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ICONS  */
+.head-icon {
+  background-color: var(--clr-primary);
+  color: var(--clr-ntrl-min);
+  font-size: 1.8rem;
+  padding: 2rem;
+  border-radius: var(--bd-radius-sm);
+  box-shadow: var(--main-shadow);
+}
+/* TYPOGRPHY */
 .h1 {
   font-size: var(--fs-h1);
   font-weight: var(--fw-boldest);
@@ -124,26 +177,22 @@ img {
 
 .h2 {
   font-size: var(--fs-h2);
-  font-weight: var(--fw-bolder);
+  font-weight: var(--fw-boldest);
 }
 .h3 {
   font-size: var(--fs-h3);
-  font-weight: var(--fw-bolder);
+  font-weight: var(--fw-bold-alt);
 }
 .h4 {
   font-size: var(--fs-h4);
   font-weight: var(--fw-regular);
 }
 
-.d-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/* BUTTONS */
 
 .btn {
   border: 2px solid transparent;
-  border-radius: 5px;
+  border-radius: var(--bd-radius-sm);
   padding: 1.2rem 3rem;
   text-transform: capitalize;
   font-weight: var(--fw-bold);
@@ -165,6 +214,24 @@ img {
 }
 
 .btn-secondary:hover {
+  color: var(--clr-ntrl-min);
+  background-color: var(--clr-ntrl-max);
+}
+.btn-tertiary {
+  background-color: var(--clr-primary);
+  color: var(--clr-ntrl-min);
+}
+
+.btn-secondary:hover {
+  color: var(--clr-ntrl-min);
+  background-color: var(--clr-ntrl-max);
+}
+.btn-dark {
+  background-color: var(--clr-ntrl-max);
+  color: var(--clr-ntrl-min);
+}
+
+.btn-dark:hover {
   color: var(--clr-ntrl-min);
   background-color: var(--clr-ntrl-max);
 }
@@ -197,7 +264,7 @@ img {
   display: block;
   height: 5px;
   margin-bottom: 4px;
-  border-radius: 10px;
+  border-radius: var(--bd-radius-lg);
   background: rgba(0, 0, 0, 0.8);
   cursor: pointer;
   display: none;
@@ -229,7 +296,7 @@ img {
 /* -------------------------------------------------------------------------- */
 .home {
   background-color: var(--clr-primary);
-  padding: 150px 0;
+  padding: 140px 0;
   height: 100%;
 }
 
@@ -251,3 +318,144 @@ img {
 .home-data .cta-btn .btn:first-child {
   margin-right: 2rem;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                               END HOME STYLES                              */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                            START FEATURES STYLES                           */
+/* -------------------------------------------------------------------------- */
+.features-items {
+  flex-wrap: wrap;
+}
+.feature-single {
+  padding: 3rem;
+  background-color: var(--clr-ntrl-min);
+  flex: 0 0 calc(100% / 3 - 1.5rem);
+  border-radius: var(--bd-radius-sm);
+  border-right: 1px solid #eee;
+  margin-bottom: 3rem;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.feature-single i {
+  background-color: var(--clr-primary);
+  color: var(--clr-ntrl-min);
+  font-size: 1.8rem;
+  padding: 2rem;
+  border-radius: var(--bd-radius-sm);
+  box-shadow: var(--main-shadow);
+}
+.feature-single h3 {
+  font-size: 1.8rem;
+  font-weight: var(--fw-bold);
+  margin: 3rem 0;
+}
+
+.feature-single:hover {
+  transform: translateY(-10px);
+}
+/* -------------------------------------------------------------------------- */
+/*                            END FEATURES STYLES                             */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                            START OVERVIEW STYLES                           */
+/* -------------------------------------------------------------------------- */
+.overview .overview-text {
+  flex: 0 0 50%;
+  padding-right: 4rem;
+  margin-right: 3rem;
+}
+
+.overview .overview-text:nth-child(2) {
+  margin-right: 0;
+  margin-left: 3rem;
+}
+.overview .overview-text h2 {
+  font-size: 3rem;
+  font-weight: var(--fw-bolder);
+  margin: 3rem 0;
+}
+
+.overview .overview-text p {
+  margin-bottom: 3rem;
+}
+
+.overview .overview-image {
+  flex: 0 0 45%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            END OVERVIEW STYLES                             */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                          START OUR HISTORY STYLES                          */
+/* -------------------------------------------------------------------------- */
+.our-history {
+  background-color: var(--clr-primary);
+}
+
+.our-history .section-heading {
+  width: 100%;
+}
+.our-history h2,
+.our-history .desc {
+  color: var(--clr-ntrl-min);
+}
+
+.our-history .counter-items {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.our-history .counter {
+  text-align: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.our-history .c-value {
+  font-size: 4rem;
+  font-weight: var(--fw-bolder);
+  color: var(--clr-ntrl-min);
+  margin-bottom: 0.5rem;
+}
+
+.our-history .c-name {
+  color: var(--clr-ntrl-min);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          END OUR HISTORY STYLES                            */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                            START PRICING STYLES                            */
+/* -------------------------------------------------------------------------- */
+.pricing .p-plan {
+  background-color: var(--clr-ntrl-min);
+  padding: 3rem;
+  flex: 0 0 calc(100% / 4 - 1.5rem);
+  border: 1px solid #eee;
+}
+
+.pricing .p-head h4 {
+  margin-bottom: 2rem;
+}
+.pricing .p-head p {
+  margin-bottom: 3rem;
+}
+.pricing .p-head .p-value {
+  font-size: 3rem;
+  font-weight: var(--fw-bolder);
+}
+
+.pricing .p-head .p-duration {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+/* -------------------------------------------------------------------------- */
+/*                            START PRICING STYLES                            */
+/* -------------------------------------------------------------------------- */
