@@ -75,7 +75,7 @@ a {
 }
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 h1,
 h2,
@@ -538,6 +538,7 @@ p {
   border: 1px solid #eee;
   border-radius: var(--bd-radius-sm);
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  flex: 0 0 calc(100% / 3 - 1.5rem);
 }
 
 .team-member .team {
@@ -706,46 +707,70 @@ p {
   border: 1px solid #eee;
   margin-bottom: 3rem;
   border-radius: var(--bd-radius-sm);
-  max-height: 70px;
   overflow: hidden;
-  transition: var(--main-transition);
 }
 
-.accordion-item.active {
-  max-height: 300px;
-}
-
-.faq .accourdion-head a {
+.faq .accordion-head {
   padding: 2rem;
   width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
-.faq .accourdion-head span {
-  font-weight: var(--fw-regular);
+.faq .accordion-head span {
   font-style: var(--fs-small);
   color: var(--clr-base-alt);
 }
 
-.faq .accourdion-head .num {
+.faq .accordion-head .num {
   margin-right: 1.5rem;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   display: inline-block;
   text-align: center;
   width: 30px;
   height: 30px;
   line-height: 30px;
   border-radius: var(--bd-radius-xl);
+  font-weight: var(--fw-bolder);
 }
-.faq .accourdion-head .title {
+.faq .accordion-head .title {
   font-size: var(--fs-base);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-bolder);
 }
-
-.faq .accourdion-head .icon i:last-child {
+.faq .accordion-head .icon i {
+  font-weight: var(--fw-bolder);
+  transition: var(--main-transition);
+}
+.faq .accordion-head .icon i:last-child {
   display: none;
 }
+
+.faq .accordion-head.active {
+  background-color: var(--clr-primary);
+}
+
+.faq .accordion-head.active span,
+.faq .accordion-head.active i {
+  color: var(--clr-ntrl-min);
+}
+.faq .accordion-head.active i:first-child {
+  display: none;
+}
+.faq .accordion-head.active i:last-child {
+  display: block;
+}
+
 .faq .accordion-body {
-  padding: 3rem 2rem;
+  padding: 0rem 2rem;
   background: #f9f9f9;
+  max-height: 0;
+  transition: var(--main-transition);
+}
+
+.faq .accordion-body.active {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  max-height: 300px;
 }
 /* -------------------------------------------------------------------------- */
 /*                              END FAQ STYLES                              */

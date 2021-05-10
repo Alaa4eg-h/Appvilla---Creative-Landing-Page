@@ -3,27 +3,9 @@ const headerBtn = document.querySelector(".header-btn");
 const headerLogo = document.querySelector(".header-logo");
 const navLink = document.querySelectorAll(".nav-link");
 const navList = document.querySelector(".nav-list");
-const occordionBtn = document.querySelectorAll(".accourdion-head a");
-const occordionBox = document.querySelectorAll(".accordion-item");
+const accordionBtn = document.querySelectorAll(".accordion-head");
+const accBody = document.querySelectorAll(".accordion-body");
 
-// occordionBtn.forEach((occoridon) => {
-//   occoridon.addEventListener("click", (e) => {
-//     e.preventDefault();
-
-//     for (let occBox of occordionBox) {
-//       if (occBox.classList.contains("active")) {
-//         occBox.classList.remove;
-//       }
-//       e.currentTarget.parentElement.parentElement.classList.toggle("active");
-//     }
-//   });
-// });
-occordionBox.forEach((occoridon) => {
-  occoridon.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log(e);
-  });
-});
 /* -------------------------------------------------------------------------- */
 /*                       ADD IS SCROLLED CLASS TO HEADER                      */
 /* -------------------------------------------------------------------------- */
@@ -95,10 +77,6 @@ navLink.forEach((nav) => {
 /* -------------------------------------------------------------------------- */
 /*                             TESTIMONIALS SLIDER                            */
 /* -------------------------------------------------------------------------- */
-// testiBullets.forEach((bullet) => {
-//   console.log(bullet);
-// });
-
 $(".owl-carousel").owlCarousel({
   loop: true,
   margin: 10,
@@ -113,4 +91,27 @@ $(".owl-carousel").owlCarousel({
       items: 1,
     },
   },
+});
+
+/* -------------------------------------------------------------------------- */
+/*                                  ACCORDION                                 */
+/* -------------------------------------------------------------------------- */
+accordionBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    let Body = btn.nextElementSibling;
+    accBody.forEach((panal) => {
+      if (
+        e.currentTarget.nextElementSibling !== panal &&
+        panal.classList.contains("active")
+      ) {
+        panal.classList.remove("active");
+        accordionBtn.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+      }
+    });
+
+    btn.classList.toggle("active");
+    Body.classList.toggle("active");
+  });
 });
